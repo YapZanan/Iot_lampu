@@ -12,12 +12,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:rotationX="180"
-        android:src="@drawable/custom_background"
+        android:accessibilityHeading="false"
         android:clickable="false"
         android:focusable="false"
-        android:accessibilityHeading="false"
-        android:importantForAccessibility="no"/>
+        android:importantForAccessibility="no"
+        android:rotationX="180"
+        android:src="@drawable/custom_background" />
 
     <ImageView
         android:id="@+id/backgroundUnder"
@@ -35,34 +35,29 @@
 
     <ImageButton
         android:id="@+id/buttonLampu"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_above="@id/backgroundUnder"
-        android:layout_below="@id/backgroundUpper"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="@dimen/atas"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="@dimen/atas"
         android:background="@drawable/change_button_color"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:padding="30dp"/>
+        android:padding="30dp"
+        />
 
     <ProgressBar
         android:id="@+id/progressBarLampu"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
         android:layout_alignStart="@id/buttonLampu"
         android:layout_alignTop="@id/buttonLampu"
         android:layout_alignEnd="@id/buttonLampu"
         android:layout_alignBottom="@id/buttonLampu"
-        android:layout_marginTop="@dimen/atas"
-        android:layout_marginBottom="@dimen/atas"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:indeterminateTint="#FF6969"
         android:visibility="invisible" />
 
@@ -71,10 +66,15 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
 
-        android:layout_centerInParent="true"
+        android:layout_alignStart="@id/buttonLampu"
+        android:layout_alignTop="@id/buttonLampu"
+        android:layout_alignEnd="@id/buttonLampu"
+        android:layout_alignBottom="@id/buttonLampu"
+
+        android:layout_margin="@dimen/atas"
         android:background="@drawable/custom_done"
         android:src="@drawable/done"
-        android:visibility="visible"/>
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/textLampu"
