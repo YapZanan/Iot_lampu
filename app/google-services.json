@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "870372037406",
+    "firebase_url": "https://iotproject-95cca-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "iotproject-95cca",
+    "storage_bucket": "iotproject-95cca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870372037406:android:2ed41745fe716f1f79af0f",
+        "android_client_info": {
+          "package_name": "com.iot.iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870372037406-b7qj17np5p4vc0n33rqpu586ccdpqb7j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDROd-QPkgpQM5-QcCnypIbiPdJDrkR2MA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870372037406-b7qj17np5p4vc0n33rqpu586ccdpqb7j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

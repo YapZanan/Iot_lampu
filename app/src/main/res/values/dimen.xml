@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tinggi_custom">120dp</dimen>
+    <dimen name="sisi">40dp</dimen>
+    <dimen name="atas">70dp</dimen>
+</resources>

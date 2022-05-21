@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/mainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/backgroundUpper"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tinggi_custom"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:rotationX="180"
+        android:src="@drawable/custom_background"
+        android:clickable="false"
+        android:focusable="false"
+        android:accessibilityHeading="false"
+        android:importantForAccessibility="no"/>
+
+    <ImageView
+        android:id="@+id/backgroundUnder"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tinggi_custom"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:rotationX="0"
+        android:src="@drawable/custom_background"
+        android:clickable="false"
+        android:focusable="false"
+        android:accessibilityHeading="false"
+        android:importantForAccessibility="no"/>
+
+    <ImageButton
+        android:id="@+id/buttonLampu"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@id/backgroundUnder"
+        android:layout_below="@id/backgroundUpper"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/sisi"
+        android:layout_marginTop="@dimen/atas"
+        android:layout_marginBottom="@dimen/atas"
+        android:adjustViewBounds="true"
+        android:background="@drawable/change_button_color"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:padding="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/lamp_off" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLampu"
+        android:visibility="invisible"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@id/backgroundUnder"
+        android:layout_below="@id/backgroundUpper"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/sisi"
+        android:layout_marginTop="@dimen/atas"
+        android:layout_marginBottom="@dimen/atas"
+        android:indeterminateTint="#FF6969"
+        />
+
+    <ImageView
+        android:id="@+id/imageViewLampu"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/progressBarLampu"
+        android:layout_alignEnd="@id/progressBarLampu"
+        android:layout_alignBottom="@id/progressBarLampu"
+        android:layout_alignTop="@id/progressBarLampu"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:src="@drawable/done"
+        android:background="@drawable/custom_done"/>
+
+    <TextView
+        android:id="@+id/textLampu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/buttonLampu"
+        android:layout_alignEnd="@id/buttonLampu"
+        android:layout_alignBottom="@id/buttonLampu"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="5dp"
+        android:foregroundGravity="center"
+        android:padding="2dp"
+        android:gravity="center"
+        android:text="Mati"
+        android:textSize="20dp"/>
+
+    <ImageButton
+        android:id="@+id/buttonSuhu"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@id/backgroundUnder"
+        android:layout_below="@id/backgroundUpper"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/atas"
+        android:layout_marginRight="@dimen/sisi"
+        android:layout_marginBottom="@dimen/atas"
+        android:background="@drawable/change_button_color"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        />
+
+
+    <TextView
+        android:id="@+id/textSuhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/buttonSuhu"
+        android:layout_alignEnd="@id/buttonSuhu"
+        android:layout_alignBottom="@id/buttonSuhu"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:foregroundGravity="center"
+        android:padding="2dp"
+        android:gravity="center"
+        android:text="Hidup"
+        android:textSize="20dp" />
+
+
+
+
+
+</RelativeLayout>
