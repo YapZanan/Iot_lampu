@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     int count;
     boolean clicked = false;
 
-    boolean state = false;
+    boolean state;
 
 
     private Calendar saatIni;
