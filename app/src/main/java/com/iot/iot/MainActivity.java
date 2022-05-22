@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -36,7 +35,8 @@ import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String buttonCond = "switch1";
     Animation animationSuccess;
 
     private ImageButton buttonLampu_;
@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textLampu_;
     int count;
     boolean clicked = false;
+
+    boolean state = false;
 
 
     private Calendar saatIni;
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //animation
+
         animationSuccess = AnimationUtils.loadAnimation(this, R.anim.animation_succes);
         animationSuccess.setInterpolator(new AccelerateDecelerateInterpolator());
 
@@ -93,24 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 stampAmbil();
                 kondisiLampu kondisi = new kondisiLampu(!buttonLampu_.isSelected(), stampTahun, stampBulan, stampTanggal, stampJam, stampMenit, stampDetik);
                 daoLampu.add(kondisi).addOnSuccessListener(suc -> {
-
-                    ubahState();
-
-                    Bitmap bmapOn = BitmapFactory.decodeResource(getResources(), R.drawable.lamp_on);
-                    Bitmap bmapOff = BitmapFactory.decodeResource(getResources(), R.drawable.lamp_off);
                     float height = buttonLampu_.getHeight();
                     float width = buttonLampu_.getWidth();
 
-                    if (buttonLampu_.isSelected()) {
-                        textLampu_.setText("Hidup");
-                        buttonLampu_.setImageBitmap(resizeImage(bmapOn, height, width));
-                        textLampu_.setTextColor(Color.BLACK);
-                    } else {
-                        textLampu_.setText("Mati");
-                        buttonLampu_.setImageBitmap(resizeImage(bmapOff, height, width));
-                        textLampu_.setTextColor(Color.WHITE);
-                    }
-
+                    ubahState();
+                    state = buttonLampu_.isSelected();
+                    stateLampu(state, height, width);
 
                     Toast.makeText(MainActivity.this, "Berhasil Diubah", Toast.LENGTH_SHORT).show();
                 }).addOnFailureListener(err -> {
@@ -128,6 +118,21 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public void stateLampu(boolean state, float height, float width){
+        Bitmap bmapOn = BitmapFactory.decodeResource(getResources(), R.drawable.lamp_on);
+        Bitmap bmapOff = BitmapFactory.decodeResource(getResources(), R.drawable.lamp_off);
+
+        if (state) {
+            textLampu_.setText("Hidup");
+            textLampu_.setTextColor(Color.BLACK);
+            buttonLampu_.setImageBitmap(resizeImage(bmapOn, height, width));
+        } else {
+            textLampu_.setText("Mati");
+            textLampu_.setTextColor(Color.WHITE);
+            buttonLampu_.setImageBitmap(resizeImage(bmapOff, height, width));
+        }
     }
 
     public void stateAwal(){
