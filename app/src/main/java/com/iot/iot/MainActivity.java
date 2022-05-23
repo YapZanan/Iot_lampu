@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textLampu_;
     int count;
     boolean clicked = false;
-
+    boolean ss;
     boolean state;
 
 
